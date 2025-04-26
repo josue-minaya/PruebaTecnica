@@ -1,0 +1,151 @@
+<table
+  mat-table
+  [dataSource]="dataSource"
+  multiTemplateDataRows
+  class="table table-striped table-hover"
+>
+  @for (column of NombreColumnas; track column) {
+  <ng-container matColumnDef="{{ column }}">
+    <th mat-header-cell *matHeaderCellDef class="text-center">{{ column }}</th>
+  </ng-container>
+  } 
+  
+  @for (column of columnsToDisplay; track column) {
+  <ng-container matColumnDef="{{ column }}">
+    <td mat-cell *matCellDef="let element" class="text-center">
+      {{ element[column] }}
+    </td>
+  </ng-container>
+  }
+
+
+  <ng-container matColumnDef="Acción">
+    <th mat-header-cell *matHeaderCellDef>Acción</th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="eliminarProducto(element.id)" >
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button (click)="toggleModal(element.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  
+
+  <tr mat-header-row *matHeaderRowDef="NombreColumnas.concat(['Acción'])"></tr>
+  <tr mat-row *matRowDef="let element; columns: columnsToDisplay.concat(['Acción'])"></tr>
+
+ 
+
+
+
+</table>
+
+
+
+<section class="modal z-30" [ngClass]="{ 'modal--show': showModal }">
+  <div class="modal__container">
+    <button class="w-10 h-10 rounded-full ml-auto" (click)="cerrar()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <h1 class="">Actualizar Producto</h1>
+
+    <form (ngSubmit)="actualizarProducto()" class="w-full"  #productoForm="ngForm">
+      <div class="form-group">
+        <label for="nombre">Nombre Producto</label>
+        <div class="input-div">
+          <div class="i"><mat-icon>library_books</mat-icon></div>
+
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="nombre"
+            placeholder="Nombre Producto"
+            [(ngModel)]="updateProducto.nombre"
+            name="nombre"
+            class="border-none outline-none"
+            required
+            minlength="3"
+            #nombre="ngModel" 
+          />
+        </div>
+        <div *ngIf="nombre.invalid && nombre.touched" class="text-red-500">
+          El nombre del producto es obligatorio y debe tener al menos 3 caracteres.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <div class="input-div">
+          <div class="i"><mat-icon>money</mat-icon></div>
+
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Precio"
+            [(ngModel)]="updateProducto.precio"
+            name="precio"
+            class="border-none outline-none"
+            required
+            min="0"   
+            #precio="ngModel"
+          />
+        </div>
+        <div *ngIf="precio.invalid && precio.touched" class="text-red-500">
+          El precio es obligatorio y debe ser mayor que 0.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Cantidad">Cantidad</label>
+        <div class="input-div">
+          <div class="i"><mat-icon>library_books</mat-icon></div>
+
+          <input
+            type="number"
+            class="form-control"
+            aria-describedby="cantidad"
+            placeholder="Cantidad"
+            [(ngModel)]="updateProducto.cantidad"
+            name="cantidad"
+            class="border-none outline-none"
+            required
+            min="1" 
+            #cantidad="ngModel"
+          />
+        </div>
+        <div *ngIf="cantidad.invalid && cantidad.touched" class="text-red-500">
+          La cantidad es obligatoria y debe ser mayor que 0.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Descripcion">Descripción</label>
+        <div class="input-div">
+          <div class="i"><mat-icon>library_books</mat-icon></div>
+
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="descripcion"
+            placeholder="Descripción"
+            [(ngModel)]="updateProducto.descripcion"
+            name="Descripcion"
+            class="border-none outline-none"
+            required
+            minlength="5"
+            #descripcion="ngModel"
+          />
+        </div>
+        <div *ngIf="descripcion.invalid && descripcion.touched" class="text-red-500">
+          La descripción es obligatoria y debe tener al menos 5 caracteres.
+        </div>
+      </div>
+      <input
+        type="submit"
+        class="bg_boton boton float-right"
+        value="Actualizar"
+        [disabled]="productoForm.invalid"
+
+      />
+    </form>
+  </div>
+</section>

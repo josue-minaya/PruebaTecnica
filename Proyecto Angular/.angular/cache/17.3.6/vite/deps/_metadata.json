@@ -1,0 +1,91 @@
+{
+  "hash": "ee801d2a",
+  "configHash": "54cb1f2c",
+  "lockfileHash": "c0bd2c06",
+  "browserHash": "de70f6a2",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "074e4ef9",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "a44fc00e",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "d80c55ef",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "5e825862",
+      "needsInterop": false
+    },
+    "@angular/material/checkbox": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/checkbox.mjs",
+      "file": "@angular_material_checkbox.js",
+      "fileHash": "9179f597",
+      "needsInterop": false
+    },
+    "@angular/material/icon": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/icon.mjs",
+      "file": "@angular_material_icon.js",
+      "fileHash": "2167dbf5",
+      "needsInterop": false
+    },
+    "@angular/material/table": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/table.mjs",
+      "file": "@angular_material_table.js",
+      "fileHash": "fdd61157",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "8e20d337",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations/async": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/animations/async.mjs",
+      "file": "@angular_platform-browser_animations_async.js",
+      "fileHash": "7c9f6a00",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "53082e72",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "browser-ZHRMFZJS": {
+      "file": "browser-ZHRMFZJS.js"
+    },
+    "chunk-WDGAE4AV": {
+      "file": "chunk-WDGAE4AV.js"
+    },
+    "chunk-KXZV3VJA": {
+      "file": "chunk-KXZV3VJA.js"
+    },
+    "chunk-T6OGQMXE": {
+      "file": "chunk-T6OGQMXE.js"
+    },
+    "chunk-4JBIDHAY": {
+      "file": "chunk-4JBIDHAY.js"
+    },
+    "chunk-OG64366A": {
+      "file": "chunk-OG64366A.js"
+    },
+    "chunk-WVPJZPXN": {
+      "file": "chunk-WVPJZPXN.js"
+    }
+  }
+}
